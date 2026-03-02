@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mrs. Avery — Educator of Excellence</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          serif: ['"Playfair Display"', 'Georgia', 'serif'],
+          sans:  ['"DM Sans"', 'sans-serif'],
+        },
+        colors: {
+          sand:   '#f5f0e8',
+          ink:    '#1a1814',
+          gold:   '#9a7a3a',
+          'gold-light': '#c9a84c',
+        },
+        keyframes: {
+          fadeUp: {
+            '0%':   { opacity: '0', transform: 'translateY(24px)' },
+            '100%': { opacity: '1', transform: 'translateY(0)' },
+          },
+          pulse2: {
+            '0%,100%': { opacity: '0.35' },
+            '50%':     { opacity: '0.9' },
+          },
+        },
+        animation: {
+          'fade-up':     'fadeUp 0.8s ease both',
+          'fade-up-d1':  'fadeUp 0.8s 0.12s ease both',
+          'fade-up-d2':  'fadeUp 0.8s 0.24s ease both',
+          'fade-up-d3':  'fadeUp 0.8s 0.36s ease both',
+          'pulse2':      'pulse2 2.2s infinite',
+        },
+      },
+    },
+  }
+</script>
+<style>
+  body { background-color: #f5f0e8; }
+
+  .hero-line {
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 1px; height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(154,122,58,0.25), transparent);
+    pointer-events: none;
+  }
+
+  .hero-glow {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 55% 55% at 50% 38%, rgba(201,168,76,0.14) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .card-line {
+    position: absolute; bottom: 0; left: 0;
+    height: 2px; width: 0%;
+    background: #9a7a3a;
+    transition: width 0.4s ease;
+  }
+  .card-wrap:hover .card-line { width: 100%; }
+
+  .card-glow {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(154,122,58,0.06), transparent);
+    opacity: 0; transition: opacity 0.4s;
+    pointer-events: none;
+  }
+  .card-wrap:hover .card-glow { opacity: 1; }
+
+  .scroll-line {
+    display: block; width: 1px; height: 40px; margin: 8px auto 0;
+    background: linear-gradient(to bottom, #9a7a3a, transparent);
+  }
+
+  .eyebrow-dash {
+    display: inline-block; width: 36px; height: 1px;
+    background: #9a7a3a; opacity: 0.55; vertical-align: middle;
+  }
+</style>
+</head>
+<body class="font-sans text-ink overflow-x-hidden">
+
+<!-- ═══════════ HERO ═══════════ -->
+<div class="relative min-h-screen grid place-items-center px-6 py-20 overflow-hidden">
+  <div class="hero-glow"></div>
+  <div class="hero-line"></div>
+
+  <div class="relative text-center max-w-2xl animate-fade-up">
+
+    <!-- eyebrow -->
+    <p class="inline-flex items-center gap-3 text-gold text-[10px] font-medium tracking-[4px] uppercase mb-8">
+      <span class="eyebrow-dash"></span>
+      Educator of Excellence
+      <span class="eyebrow-dash"></span>
+    </p>
+
+    <!-- name -->
+    <h1 class="font-serif font-black leading-[0.92] tracking-tight mb-6 text-ink"
+        style="font-size: clamp(3.4rem, 9vw, 7rem);">
+      Mrs.<br>
+      <em class="text-gold italic">Avery</em>
+    </h1>
+
+    <!-- subject + team badge -->
+    <div class="flex items-center justify-center gap-3 mb-6 animate-fade-up-d1">
+      <span class="text-[10px] font-medium tracking-[3px] uppercase text-ink/40">Social Studies</span>
+      <span class="w-1 h-1 rounded-full bg-gold/40"></span>
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-green-600/30 bg-green-50 text-green-700 text-[10px] font-medium tracking-widest uppercase">
+        <span class="w-1.5 h-1.5 rounded-full bg-green-500 inline-block"></span>
+        8 Green
+      </span>
+    </div>
+
+    <!-- desc -->
+    <p class="text-ink/50 text-base leading-relaxed max-w-sm mx-auto mb-12 animate-fade-up-d2">
+      A dedicated educator who brings out the very best in every student, every single day.
+    </p>
+
+    <!-- scroll hint -->
+    <div class="animate-pulse2 inline-block">
+      <span class="text-[10px] tracking-[3px] uppercase text-ink/30">Scroll</span>
+      <span class="scroll-line"></span>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════ CARDS ═══════════ -->
+<section class="max-w-5xl mx-auto px-6 py-28">
+
+  <div class="flex items-center gap-4 mb-16">
+    <span class="text-gold text-[10px] font-medium tracking-[4px] uppercase">Three Reasons Why</span>
+    <div class="flex-1 h-px bg-gold/20"></div>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-px bg-stone-200">
+
+    <div class="card-wrap relative bg-sand border-0 p-12 overflow-hidden transition-colors duration-300 hover:bg-amber-50 animate-fade-up">
+      <div class="card-glow"></div>
+      <p class="font-serif font-black text-[5rem] leading-none text-gold/15 mb-6">01</p>
+      <h2 class="font-serif text-xl font-bold text-ink mb-3">Compassionate Leader</h2>
+      <p class="text-ink/45 text-sm leading-relaxed">Never resorts to sending students to the office. She believes in resolving things with patience and understanding.</p>
+      <div class="card-line"></div>
+    </div>
+
+    <div class="card-wrap relative bg-sand border-0 p-12 overflow-hidden transition-colors duration-300 hover:bg-amber-50 animate-fade-up-d1">
+      <div class="card-glow"></div>
+      <p class="font-serif font-black text-[5rem] leading-none text-gold/15 mb-6">02</p>
+      <h2 class="font-serif text-xl font-bold text-ink mb-3">Rewards Effort</h2>
+      <p class="text-ink/45 text-sm leading-relaxed">Recognizes that hard work matters. Students who give their best are rewarded with the grades they deserve.</p>
+      <div class="card-line"></div>
+    </div>
+
+    <div class="card-wrap relative bg-sand border-0 p-12 overflow-hidden transition-colors duration-300 hover:bg-amber-50 animate-fade-up-d2">
+      <div class="card-glow"></div>
+      <p class="font-serif font-black text-[5rem] leading-none text-gold/15 mb-6">03</p>
+      <h2 class="font-serif text-xl font-bold text-ink mb-3">Truly the Best</h2>
+      <p class="text-ink/45 text-sm leading-relaxed">Not just a teacher — a mentor, a motivator, and the best educator a student could ever hope to have.</p>
+      <div class="card-line"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════ QUOTE ═══════════ -->
+<div class="border-t border-b border-stone-200 py-24 px-6 text-center bg-white/40">
+  <blockquote class="font-serif italic font-normal leading-relaxed text-ink mx-auto mb-8 max-w-2xl"
+              style="font-size: clamp(1.5rem, 4vw, 2.5rem);">
+    "A great teacher doesn't just teach —<br>
+    she <span class="text-gold">inspires you to believe</span> in yourself."
+  </blockquote>
+  <p class="text-ink/30 text-[11px] tracking-[3px] uppercase">— Written for Mrs. Avery</p>
+</div>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="max-w-5xl mx-auto px-6 py-14 flex flex-wrap items-center justify-between gap-5 border-t border-stone-200">
+  <div>
+    <p class="font-serif font-bold text-gold text-lg">Mrs. Avery</p>
+    <p class="text-ink/30 text-xs tracking-widest uppercase mt-0.5">Social Studies · 8 Green</p>
+  </div>
+  <p class="text-ink/25 text-xs tracking-wide">Made with admiration &amp; gratitude ✦</p>
+</footer>
+
+</body>
+</html>
